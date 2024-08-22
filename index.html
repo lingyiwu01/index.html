@@ -5,24 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Website</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
+        body { 
+            font-family: Arial, sans-serif; 
             margin: 0;
             padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
         }
-        h1 { color: #333; }
-        .photo-container {
-            margin: 20px auto;
-            display: flex;
-            justify-content: center;
+        h1 { 
+            color: #333; 
+            margin-top: 20px; 
         }
-        .photo-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        .linkedin-button, .youtube-button {
+        .linkedin-button {
             text-decoration: none;
             color: white;
             background-color: #ff0050;
@@ -31,8 +25,29 @@
             margin: 5px;
             display: inline-block;
         }
-        .linkedin-button:hover { background-color: #cc0040; }
-        .youtube-button:hover { background-color: #0056b3; }
+        .linkedin-button:hover {
+            background-color: #cc0040;
+        }
+        .youtube-button {
+            text-decoration: none;
+            color: white;
+            background-color: #ff0050;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 5px;
+            display: inline-block;
+        }
+        .youtube-button:hover {
+            background-color: #0056b3;
+        }
+        .photo-container {
+            margin: 20px 0;
+        }
+        .photo-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
         .iframe-container {
             margin: 20px 0;
             max-width: 100%;
@@ -47,9 +62,9 @@
             background-color: #333;
             color: white;
             padding: 10px 0;
-            margin-top: 20px;
             position: relative;
             text-align: center;
+            margin-top: 20px;
         }
         footer a {
             color: white;
@@ -60,23 +75,27 @@
             display: inline-block;
             margin: 5px;
         }
-        footer a:hover { background-color: #0056b3; }
-        .follow-us { margin-bottom: 10px; }
+        footer a:hover {
+            background-color: #0056b3;
+        }
+        .follow-us {
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
     <h1>Welcome to Lingyi's Personal Website!</h1>
+    <p>Hello, world!</p>
     <div class="photo-container">
         <img src="证件照.jpg" alt="Lingyi's Photo">
     </div>
-    <p>Hello, world!</p>
-    <p>Check out my YouTube video: 
-        <a href="https://www.youtube.com/watch?v=Jz9z0rK_YU4" class="youtube-button" target="_blank">Watch Video</a>
-    </p>
+    <div class="iframe-container">
+        <iframe src="https://m.uhomes.com/liveplayback/106107?xcode=000cc674fea9025c288c&share_id=261496&app_id=11&sharetag=moments&language=zh&invite_code=BWMHPFFnBjdUaAM6" allowfullscreen></iframe>
+    </div>
     <footer>
         <div class="follow-us">
             <a href="https://www.linkedin.com/in/lingyi-wu-a42097227/" class="linkedin-button" target="_blank">Follow me on LinkedIn</a>
-            <a href="https://www.youtube.com/watch?v=Jz9z0rK_YU4" class="youtube-button" target="_blank">Follow me on YouTube</a>
+            <a href="https://www.youtube.com/watch?v=Jz9z0rK_YU4" class="youtube-button" target="_blank">Watch on YouTube</a>
         </div>
         <p>&copy; 2024 Lingyi Wu's qualifications. All rights reserved.</p>
     </footer>
