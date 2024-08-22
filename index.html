@@ -7,10 +7,19 @@
     <style>
         body { font-family: Arial, sans-serif; }
         h1 { color: #333; }
+        .linkedin-button {
+            text-decoration: none;
+            color: white;
+            background-color: #ff0050;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 5px;
+            display: inline-block;
+        }
         .linkedin-button:hover {
             background-color: #cc0040;
         }
-        .linkedin-button {
+        .youtube-button {
             text-decoration: none;
             color: white;
             background-color: #ff0050;
@@ -22,14 +31,15 @@
         .youtube-button:hover {
             background-color: #0056b3;
         }
-        .youtube-button {
-            text-decoration: none;
-            color: white;
-            background-color: #ff0050;
-            padding: 10px 20px;
-            border-radius: 5px;
-            margin: 5px;
-            display: inline-block;
+        .iframe-container {
+            margin: 20px 0;
+            max-width: 100%;
+            height: 600px; /* Adjust height as needed */
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
         footer {
             background-color: #333;
@@ -37,6 +47,7 @@
             padding: 10px 0;
             margin-top: 20px;
             position: relative;
+            text-align: center;
         }
         footer a {
             color: white;
@@ -45,7 +56,7 @@
             border-radius: 5px;
             text-decoration: none;
             display: inline-block;
-            margin-bottom: 10px;
+            margin: 5px;
         }
         footer a:hover {
             background-color: #0056b3;
@@ -59,7 +70,7 @@
     <h1>Welcome to Lingyi's Personal Website!</h1>
     <p>Hello, world!</p>
     <p>Check out my YouTube video: 
-        <a href="https://www.youtube.com/watch?v=Jz9z0rK_YU4" target="_blank">Watch Video</a>
+        <a href="https://www.youtube.com/watch?v=Jz9z0rK_YU4" class="youtube-button" target="_blank">Watch Video</a>
     </p>
     <div class="iframe-container">
         <iframe src="https://m.uhomes.com/liveplayback/106107?xcode=000cc674fea9025c288c&share_id=261496&app_id=11&sharetag=moments&language=zh&invite_code=BWMHPFFnBjdUaAM6" allowfullscreen></iframe>
@@ -69,7 +80,7 @@
             <a href="https://www.linkedin.com/in/lingyi-wu-a42097227/" class="linkedin-button" target="_blank">Follow me on LinkedIn</a>
             <a href="https://www.youtube.com/watch?v=Jz9z0rK_YU4" class="youtube-button" target="_blank">Follow me on YouTube</a>
         </div>
-        <p>&copy; 2024 Lingyi Wu's qualification. All rights reserved.</p>
+        <p>&copy; 2024 Lingyi Wu's qualifications. All rights reserved.</p>
     </footer>
 </body>
 </html>
