@@ -5,17 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Website</title>
     <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            background-color: #f4f4f4;
-        }
-        h1 { 
-            color: #333; 
-            margin-top: 20px; 
-        }
+        body { font-family: Arial, sans-serif; }
+        h1 { color: #333; }
         .linkedin-button {
             text-decoration: none;
             color: white;
@@ -40,13 +31,17 @@
         .youtube-button:hover {
             background-color: #0056b3;
         }
-        .photo-container {
-            margin: 20px 0;
+        .wechat-button {
+            text-decoration: none;
+            color: white;
+            background-color: #07c160; /* WeChat green color */
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 5px;
+            display: inline-block;
         }
-        .photo-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
+        .wechat-button:hover {
+            background-color: #05a34a;
         }
         .iframe-container {
             margin: 20px 0;
@@ -62,9 +57,9 @@
             background-color: #333;
             color: white;
             padding: 10px 0;
+            margin-top: 20px;
             position: relative;
             text-align: center;
-            margin-top: 20px;
         }
         footer a {
             color: white;
@@ -81,17 +76,29 @@
         .follow-us {
             margin-bottom: 10px;
         }
+        .profile-pic {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            display: block;
+            margin: 20px auto;
+        }
     </style>
 </head>
 <body>
     <h1>Welcome to Lingyi's Personal Website!</h1>
     <p>Hello, world!</p>
-    <div class="photo-container">
-        <img src="证件照.jpg" alt="Lingyi's Photo">
-    </div>
-    <div class="iframe-container">
-        <iframe src="https://m.uhomes.com/liveplayback/106107?xcode=000cc674fea9025c288c&share_id=261496&app_id=11&sharetag=moments&language=zh&invite_code=BWMHPFFnBjdUaAM6" allowfullscreen></iframe>
-    </div>
+    <img src="https://github.com/yourusername/yourrepository/raw/main/Wechat01.jpg" alt="Lingyi Wu" class="profile-pic">
+    <p>Check out my YouTube video: 
+        <a href="https://www.youtube.com/watch?v=Jz9z0rK_YU4" class="youtube-button" target="_blank">Watch Video</a>
+    </p>
+    <a href="https://www.linkedin.com/in/lingyi-wu-a42097227/" class="linkedin-button" target="_blank">Follow me on LinkedIn</a>
+    <a href="https://www.youtube.com/watch?v=Jz9z0rK_YU4" class="youtube-button" target="_blank">Watch on YouTube</a>
+    <!-- WeChat QR Code -->
+    <a href="https://your-wechat-link" class="wechat-button" target="_blank">
+        <img src="https://github.com/yourusername/yourrepository/raw/main/Wechat01.jpg" alt="WeChat QR Code" style="width: 100px; height: 100px; vertical-align: middle;">
+        Follow me on WeChat
+    </a>
     <footer>
         <div class="follow-us">
             <a href="https://www.linkedin.com/in/lingyi-wu-a42097227/" class="linkedin-button" target="_blank">Follow me on LinkedIn</a>
