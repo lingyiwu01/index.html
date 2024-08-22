@@ -5,31 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Website</title>
     <style>
-        body { font-family: Arial, sans-serif; }
-        h1 { color: #333; }
-        .linkedin-button {
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #333;
+        }
+        .youtube-button, .linkedin-button {
             text-decoration: none;
             color: white;
-            background-color: #ff0050;
             padding: 10px 20px;
-            border-radius: 5px;
-            margin: 5px;
+            border-radius: 50%;
             display: inline-block;
-        }
-        .linkedin-button:hover {
-            background-color: #cc0040;
+            position: fixed;
+            bottom: 20px;
+            z-index: 1000;
         }
         .youtube-button {
-            text-decoration: none;
-            color: white;
             background-color: #ff0050;
-            padding: 10px 20px;
-            border-radius: 5px;
-            margin: 5px;
-            display: inline-block;
+            right: 80px; /* Adjust position from right */
         }
         .youtube-button:hover {
-            background-color: #0056b3;
+            background-color: #cc0040;
+        }
+        .linkedin-button {
+            background-color: #0077b5;
+            right: 20px; /* Adjust position from right */
+        }
+        .linkedin-button:hover {
+            background-color: #005582;
         }
         .iframe-container {
             margin: 20px 0;
@@ -46,7 +52,6 @@
             color: white;
             padding: 10px 0;
             margin-top: 20px;
-            position: relative;
             text-align: center;
         }
         footer a {
@@ -77,10 +82,11 @@
     </div>
     <footer>
         <div class="follow-us">
-            <a href="https://www.linkedin.com/in/lingyi-wu-a42097227/" class="linkedin-button" target="_blank">Follow me on LinkedIn</a>
-            <a href="https://www.youtube.com/watch?v=Jz9z0rK_YU4" class="youtube-button" target="_blank">Follow me on YouTube</a>
+            <!-- Removed LinkedIn and YouTube buttons from footer -->
         </div>
         <p>&copy; 2024 Lingyi Wu's qualifications. All rights reserved.</p>
     </footer>
+    <a href="https://www.linkedin.com/in/lingyi-wu-a42097227/" class="linkedin-button" target="_blank">LinkedIn</a>
+    <a href="https://www.youtube.com/watch?v=Jz9z0rK_YU4" class="youtube-button" target="_blank">YouTube</a>
 </body>
 </html>
