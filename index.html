@@ -27,26 +27,6 @@
             padding: 20px 0;
             position: relative;
         }
-        .top-right-buttons {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-        }
-        .top-right-buttons a {
-            text-decoration: none;
-            color: white;
-            background-color: #ff0050; /* Red color */
-            padding: 10px 20px;
-            border-radius: 5px;
-            margin: 5px 0; /* Vertical margin for spacing */
-            display: block;
-            text-align: center;
-        }
-        .top-right-buttons a:hover {
-            background-color: #cc0040; /* Darker red for hover effect */
-        }
         .top-right-links {
             position: absolute;
             top: 20px;
@@ -81,7 +61,7 @@
         .bio-container p {
             color: black; /* Black text color for bio container paragraphs */
         }
-        .linkedin-button, .github-button, .databricks-button, .youtube-button {
+        .linkedin-button, .github-button, .databricks-button, .youtube-button, .shopping-cart-button {
             text-decoration: none;
             color: white;
             background-color: #ff0050; /* Red color */
@@ -90,7 +70,7 @@
             margin: 5px;
             display: inline-block;
         }
-        .linkedin-button:hover, .github-button:hover, .databricks-button:hover, .youtube-button:hover {
+        .linkedin-button:hover, .github-button:hover, .databricks-button:hover, .youtube-button:hover, .shopping-cart-button:hover {
             background-color: #cc0040; /* Darker red for hover effect */
         }
         footer {
@@ -120,12 +100,12 @@
 </head>
 <body>
     <header>
-        </div>
         <div class="top-right-links">
             <a href="https://www.linkedin.com/in/lingyi-wu-a42097227/" target="_blank">Linkedin</a>
             <a href="https://github.com/MarianaWu01/lingyiwu.github.com" target="_blank">Github</a>
             <a href="https://github.com/MarianaWu01/Databricks" target="_blank">Databricks</a>
             <a href="https://www.youtube.com/watch?v=Jz9z0rK_YU4" target="_blank">YouTube</a>
+            <a href="#shopping-cart" class="shopping-cart-button">Shopping Cart</a>
         </div>
         <h1>Welcome to Lingyi's Personal Website!</h1>
         <p>Welcome to my world!</p>
@@ -139,13 +119,19 @@
 
     <div class="bio-container">
         <p><strong>About Me:</strong></p>
-        <p>As a lifelong learner with a deep-seated curiosity about the world, I have always been drawn to the field of analytics. I understand the significance of data-driven decision-making and take pleasure in providing valuable insights. My proficiency in diverse data analysis skills such as SQL, Python, R, Tableau, and SAS has enabled me to deliver impactful results. I am committed to constantly improving my data analysis skills and mindset to translate data into actionable insights, helping customers to make smarter decisions and companies to identify potential revenue opportunities.</p>
-        <p>I have accumulated real-world experience through internships both on and off campus, including roles at Gilead Sciences, Guangfa Securities, China Securities, China CITIC Bank, and Shanghai Pudong Development Bank. I have also studied the Guzheng for over 10 years, earning national golden prizes multiple times. Now, I am actively seeking a full-time job in the United States!</p>
+        <p>As a lifelong learner with a deep-seated curiosity about the world, I have always been drawn to the field of analytics...</p>
         <p><strong>Contact Me:</strong></p>
         <p>Email: <a href="mailto:lingyiwu@usc.edu">lingyiwu@usc.edu</a></p>
         <p>Phone: <a href="tel:2134215004">213-421-5004</a></p>
-        <p>Video: <a href="https://m.uhomes.com/liveplayback/106107?xcode=000cc674fea9025c288c&share_id=261496&app_id=11&sharetag=moments&language=zh&invite_code=BWMHPFFnBjdUaAM6" target="_blank">Watch my video</a></p>
+        <p>Video: <a href="https://m.uhomes.com/liveplayback/106107" target="_blank">Watch my video</a></p>
     </div>
+
+    <!-- Shopping Cart Section -->
+    <div id="shopping-cart" class="bio-container">
+        <h2>Shopping Cart</h2>
+        <p>This is where the shopping cart content will go. You can add your products here later.</p>
+    </div>
+
     <footer>
         <div class="follow-us">
             <a href="https://www.linkedin.com/in/lingyi-wu-a42097227/" class="linkedin-button" target="_blank">Follow me on LinkedIn</a>
