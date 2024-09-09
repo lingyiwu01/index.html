@@ -14,8 +14,7 @@
         gtag('config', 'G-TY8F964W9T');
     </script>
     <style>
-        body
-        {
+        body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
@@ -26,6 +25,43 @@
             background-color: #333;
             color: white;
             padding: 20px 0;
+            position: relative;
+        }
+        .top-right-buttons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .top-right-buttons a {
+            text-decoration: none;
+            color: white;
+            background-color: #ff0050; /* Red color */
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 5px 0; /* Vertical margin for spacing */
+            display: block;
+            text-align: center;
+        }
+        .top-right-buttons a:hover {
+            background-color: #cc0040; /* Darker red for hover effect */
+        }
+        .top-right-links {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+        }
+        .top-right-links a {
+            text-decoration: underline; /* Underline links */
+            color: white; /* White text color */
+            margin-left: 15px; /* Space between links */
+        }
+        .top-right-links a:first-child {
+            margin-left: 0; /* Remove left margin from the first link */
         }
         h1 {
             color: white; /* Change to white for header text */
@@ -84,6 +120,13 @@
 </head>
 <body>
     <header>
+        </div>
+        <div class="top-right-links">
+            <a href="https://www.linkedin.com/in/lingyi-wu-a42097227/" target="_blank">Linkedin</a>
+            <a href="https://github.com/MarianaWu01/lingyiwu.github.com" target="_blank">Github</a>
+            <a href="https://github.com/MarianaWu01/Databricks" target="_blank">Databricks</a>
+            <a href="https://www.youtube.com/watch?v=Jz9z0rK_YU4" target="_blank">YouTube</a>
+        </div>
         <h1>Welcome to Lingyi's Personal Website!</h1>
         <p>Welcome to my world!</p>
         <div class="follow-us">
@@ -114,4 +157,3 @@
     </footer>
 </body>
 </html>
-
