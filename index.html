@@ -81,35 +81,6 @@
         .bio-container p {
             color: black; /* Black text color for bio container paragraphs */
         }
-        .container {
-            display: flex;
-            justify-content: space-between; /* 左右分布 */
-            align-items: flex-start; /* 垂直顶部对齐 */
-            gap: 20px; /* 元素间距 */
-        }
-        .bio-container {
-            flex: 1; /* 左侧内容占据剩余空间 */
-            margin-right: 20px; /* 可选，增加右边间距 */
-        }
-        .map-container {
-            flex: 1; /* 右侧内容占据剩余空间 */
-            max-width: 600px; /* 限制最大宽度 */
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 阴影效果 */
-            background-color: #fff; /* 背景色 */
-            border-radius: 10px; /* 圆角 */
-            padding: 10px; /* 内边距 */
-        }
-        iframe {
-            width: 100%; /* 让地图填满容器 */
-            height: 450px;
-            border: none;
-            border-radius: 8px; /* 圆角 */
-        }
-
-
-
-        
         .linkedin-button, .github-button, .databricks-button, .youtube-button {
             text-decoration: none;
             color: white;
@@ -121,6 +92,31 @@
         }
         .linkedin-button:hover, .github-button:hover, .databricks-button:hover, .youtube-button:hover {
             background-color: #cc0040; /* Darker red for hover effect */
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .bio-container {
+           flex: 1;
+           margin-right: 20px;
+        }
+        .map-container {
+            flex: 1;
+            width: 100%;
+            max-width: 1000px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #fff;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+            border-radius: 8px;
         }
 </html>
         footer {
@@ -150,29 +146,49 @@
 </head>
 <body>
     <header>
+        </div>
         <div class="top-right-links">
             <a href="https://www.linkedin.com/in/lingyi-wu-a42097227/" target="_blank">Linkedin</a>
             <a href="https://github.com/MarianaWu01/lingyiwu.github.com" target="_blank">Github</a>
             <a href="https://github.com/MarianaWu01/Databricks" target="_blank">Databricks</a>
             <a href="https://www.youtube.com/watch?v=Jz9z0rK_YU4" target="_blank">YouTube</a>
             <a href="https://marianawu01.github.io/01Shopping-/" target="_blank">Shopping Cart</a>
+
         </div>
         <h1>Welcome to Lingyi's Personal Website!</h1>
         <p>Welcome to my world!</p>
+        <div class="follow-us">
+            <a href="https://www.linkedin.com/in/lingyi-wu-a42097227/" class="linkedin-button" target="_blank">Follow me on LinkedIn</a>
+            <a href="https://github.com/MarianaWu01/lingyiwu.github.com" class="github-button" target="_blank">View my GitHub</a>
+            <a href="https://github.com/MarianaWu01/Databricks" class="databricks-button" target="_blank">View Databricks</a>
+            <a href="https://www.youtube.com/watch?v=Jz9z0rK_YU4" class="youtube-button" target="_blank">Watch on YouTube</a>
+            <a href="https://marianawu01.github.io/01Shopping-/" class="youtube-button" target="_blank">Shopping Cart</a>
+        </div>
     </header>
 
-    <div class="container">
-        <div class="bio-container">
-            <h1>Welcome to Lingyi's Personal Website!</h1>
-            <p>Welcome to my world!</p>
-        </div>
-
-        <div class="map-container">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509374!2d144.96305771531094!3d-37.814217979751734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x5045675218ce7e33!2zTWVsYm91cm5lLCDkvIHliY3lub8!5e0!3m2!1sen!2sau!4v1689924356829!5m2!1sen!2sau" 
-                allowfullscreen></iframe>
-        </div>
+    <div class="bio-container">
+        <p><strong>About Me:</strong></p>
+        <p>As a lifelong learner with a deep-seated curiosity about the world, I have always been drawn to the field of analytics. I understand the significance of data-driven decision-making and take pleasure in providing valuable insights. My proficiency in diverse data analysis skills such as SQL, Python, R, Tableau, and SAS has enabled me to deliver impactful results. I am committed to constantly improving my data analysis skills and mindset to translate data into actionable insights, helping customers to make smarter decisions and companies to identify potential revenue opportunities.</p>
+        <p>I have accumulated real-world experience through internships both on and off campus, including roles at Gilead Sciences, Guangfa Securities, China Securities, China CITIC Bank, and Shanghai Pudong Development Bank. I have also studied the Guzheng for over 10 years, earning national golden prizes multiple times. Now, I am actively seeking a full-time job in the United States!</p>
     </div>
+
+    <div class="map-container">
+        <h2>My Location</h2>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3306.899045923038!2d-118.29994812370973!3d34.02080221938891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c7f8f730859f%3A0x266dd8da0dd295c8!2s1294%20W%2037th%20St%2C%20Los%20Angeles%2C%20CA%2090007!5e0!3m2!1sen!2sus!4v1737742394737!5m2!1sen!2sus"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+    <div class="bio-container">
+        <p><strong>Contact Me:</strong></p>
+        <p>Email: <a href="mailto:lingyiwu@usc.edu">lingyiwu@usc.edu</a></p>
+        <p>Phone: <a href="tel:2134215004">213-421-5004</a></p>
+        <p>Video: <a href="https://m.uhomes.com/liveplayback/106107?xcode=000cc674fea9025c288c&share_id=261496&app_id=11&sharetag=moments&language=zh&invite_code=BWMHPFFnBjdUaAM6" target="_blank">Watch my video</a></p>
+    </div>
+
+
 
     <footer>
         <div class="follow-us">
@@ -184,3 +200,4 @@
         <p>&copy; 2024 Lingyi Wu's qualifications. All rights reserved.</p>
     </footer>
 </body>
+</html>
