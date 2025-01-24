@@ -105,13 +105,21 @@
         }
         .map-container {
             flex: 1;
-            max-width: 800px; /* Adjust as needed */
+            max-width: 800px; /* 最大宽度调整为800px */
             margin-left: 20px;
             margin-right: 20px;
         }
+
+        .map-container iframe {
+            width: 100%; /* 确保 iframe 宽度响应父容器 */
+            height: 400px; /* 默认高度为400px */
+            border: none;
+        }
+
+        /* 平板设备 (小于1024px) */
         @media (max-width: 1024px) {
             .map-container iframe {
-                height: 300px; /* 缩小地图高度 */
+                height: 300px; /* 缩小高度 */
             }
         }
 
@@ -128,10 +136,6 @@
                 height: 200px; /* 最小高度 */
             }
         }
-
-
-
-
 
 
         
