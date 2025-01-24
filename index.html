@@ -93,6 +93,18 @@
         .linkedin-button:hover, .github-button:hover, .databricks-button:hover, .youtube-button:hover {
             background-color: #cc0040; /* Darker red for hover effect */
         }
+        .container {
+            display: flex;
+            justify-content: space-between; /* 左右分布 */
+            align-items: flex-start; /* 垂直对齐 */
+        }
+        .bio-container {
+           flex: 1; /* 左侧联系方式容器占用剩余空间 */
+           margin-right: 20px; /* 给地图和联系方式之间添加间距 */
+        }
+        .map-container {
+            flex: 1; /* 右侧地图容器占用剩余空间 */
+        }
         .map-container {
             width: 150%;
             max-width: 1000px;
