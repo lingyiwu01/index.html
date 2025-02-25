@@ -13,6 +13,26 @@
         gtag('js', new Date());
         gtag('config', 'G-TY8F964W9T');
     </script>
+
+    <script>
+        function applyLanguage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const lang = urlParams.get('lang') || 'en'; // 默认英文
+
+            if (lang === 'zh') {
+                document.getElementById('welcome-text').innerText = '欢迎来到Lingyi的个人网站';
+                document.getElementById('description-text').innerText = '这是一个关于我的个人网站。';
+            } else {
+                document.getElementById('welcome-text').innerText = 'Welcome to Lingyi\'s Personal Website';
+                document.getElementById('description-text').innerText = 'This is a personal website where you can learn more about me.';
+            }
+        }
+
+        window.onload = applyLanguage;
+    </script>
+
+    
+    
     <style>
         body {
             font-family: Arial, sans-serif;
