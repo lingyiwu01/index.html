@@ -27,6 +27,26 @@
             padding: 20px 0;
             position: relative;
         }
+        .language-switch {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px 12px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+            font-size: 14px;
+            z-index: 1000;
+        }
+        .language-switch a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            margin: 0 5px;
+        }
+        .language-switch a:hover {
+            color: #007bff;
+        }
         .top-right-buttons {
             position: absolute;
             top: 20px;
@@ -171,6 +191,10 @@
         <button onclick="setLanguage('en')">English</button>
         <button onclick="setLanguage('zh')">中文</button>
     </div>  
+        <div class="language-switch">
+        <a href="?lang=en">English</a> | 
+        <a href="?lang=zh">中文</a>
+    </div>
     <header>
         </div>
         <div class="top-right-links">
