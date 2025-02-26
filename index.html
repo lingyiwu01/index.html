@@ -13,7 +13,7 @@
         gtag('js', new Date());
         gtag('config', 'G-TY8F964W9T');
     </script>
-    
+
     <script>
         function setLanguage(lang) {
             const url = new URL(window.location.href);
@@ -36,46 +36,16 @@
             padding: 20px 0;
             position: relative;
         }
-        .language-switch {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 8px 12px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-            font-size: 14px;
-            z-index: 1000;
-        }
-        .language-switch a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            margin: 0 5px;
-        }
-        .language-switch a:hover {
-            color: #007bff;
-        }
-        .top-right-buttons {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-        }
-        .top-right-buttons a {
-            text-decoration: none;
+        h1 {
             color: white;
-            background-color: #ff0050; /* Red color */
-            padding: 10px 20px;
-            border-radius: 5px;
-            margin: 5px 0; /* Vertical margin for spacing */
-            display: block;
-            text-align: center;
+            margin: 0;
         }
-        .top-right-buttons a:hover {
-            background-color: #cc0040; /* Darker red for hover effect */
+        p {
+            margin: 10px 20px;
+            line-height: 1.6;
         }
+
+        /* 右上角链接和语言选择框 */
         .top-right-links {
             position: absolute;
             top: 20px;
@@ -85,43 +55,35 @@
             flex-direction: row;
         }
         .top-right-links a {
-            text-decoration: underline; /* Underline links */
-            color: white; /* White text color */
-            margin-left: 15px; /* Space between links */
+            text-decoration: underline;
+            color: white;
+            margin-left: 15px;
         }
-        .top-right-links a:first-child {
-            margin-left: 0; /* Remove left margin from the first link */
+        .top-right-links select {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-left: 15px;
         }
-        h1 {
-            color: white; /* Change to white for header text */
-            margin: 0;
-        }
-        p {
-            margin: 10px 20px;
-            line-height: 1.6;
-        }
-        .bio-container {
-            margin: 20px;
-            text-align: left;
-            background-color: white; /* White background for bio container */
-            padding: 20px;
-            border-radius: 5px;
-        }
-        .bio-container p {
-            color: black; /* Black text color for bio container paragraphs */
-        }
+
+        /* 按钮样式 */
         .linkedin-button, .github-button, .databricks-button, .youtube-button {
             text-decoration: none;
             color: white;
-            background-color: #ff0050; /* Red color */
+            background-color: #ff0050;
             padding: 10px 20px;
             border-radius: 5px;
             margin: 5px;
             display: inline-block;
         }
         .linkedin-button:hover, .github-button:hover, .databricks-button:hover, .youtube-button:hover {
-            background-color: #cc0040; /* Darker red for hover effect */
+            background-color: #cc0040;
         }
+
+        /* 主要内容布局 */
         .container {
             display: flex;
             justify-content: space-between;
@@ -130,42 +92,44 @@
         }
         .bio-container {
             flex: 1;
+            text-align: left;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
             margin-right: 20px;
+        }
+        .bio-container p {
+            color: black;
         }
         .map-container {
             flex: 1;
-            max-width: 1000px; /* 最大宽度调整为800px */
+            max-width: 1000px;
             margin-left: 20px;
             margin-right: 20px;
         }
-
         .map-container iframe {
-            width: 100%; /* 确保 iframe 宽度响应父容器 */
-            height: 600px; /* 默认高度为400px */
+            width: 100%;
+            height: 600px;
             border: none;
         }
 
-        /* 平板设备 (小于1024px) */
+        /* 响应式调整 */
         @media (max-width: 1024px) {
             .map-container iframe {
-                height: 300px; /* 缩小高度 */
+                height: 300px;
             }
         }
-
-        /* 手机设备 (小于768px) */
         @media (max-width: 768px) {
             .map-container iframe {
-                height: 250px; /* 再次缩小高度 */
+                height: 250px;
+            }
+        }
+        @media (max-width: 480px) {
+            .map-container iframe {
+                height: 200px;
             }
         }
 
-        /* 小屏幕手机 (小于480px) */
-        @media (max-width: 480px) {
-            .map-container iframe {
-                height: 200px; /* 最小高度 */
-            }
-        }
-</html>
         footer {
             background-color: #333;
             color: white;
@@ -176,7 +140,7 @@
         }
         footer a {
             color: white;
-            background-color: #ff0050; /* Red color */
+            background-color: #ff0050;
             padding: 5px 10px;
             border-radius: 5px;
             text-decoration: none;
@@ -184,13 +148,9 @@
             margin: 5px;
         }
         footer a:hover {
-            background-color: #cc0040; /* Darker red for hover effect */
-        }
-        .follow-us {
-            margin-bottom: 10px;
+            background-color: #cc0040;
         }
     </style>
-
 </head>
 <body>
     <div>
