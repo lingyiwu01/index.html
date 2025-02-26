@@ -5,34 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lingyi's Personal Website</title>
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TY8F964W9T"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag(){ dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-TY8F964W9T');
     </script>
 
     <script>
-        function applyLanguage() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const lang = urlParams.get('lang') || 'en'; // 默认英文
+        document.addEventListener("DOMContentLoaded", function () {
+            function applyLanguage() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const lang = urlParams.get('lang') || 'en'; // 默认英文
 
-            if (lang === 'zh') {
-                document.getElementById('welcome-text').innerText = '欢迎来到Lingyi的个人网站';
-                document.getElementById('description-text').innerText = '这是一个关于我的个人网站。';
-            } else {
-                document.getElementById('welcome-text').innerText = 'Welcome to Lingyi\'s Personal Website';
-                document.getElementById('description-text').innerText = 'This is a personal website where you can learn more about me.';
+                if (lang === 'zh') {
+                    document.getElementById('welcome-text').innerText = '欢迎来到 Lingyi 的个人网站';
+                    document.getElementById('description-text').innerText = '这是一个关于我的个人网站。';
+                } else {
+                    document.getElementById('welcome-text').innerText = "Welcome to Lingyi's Personal Website";
+                    document.getElementById('description-text').innerText = "This is a personal website where you can learn more about me.";
+                }
             }
-        }
 
-        window.onload = applyLanguage;
+            function setLanguage(lang) {
+                const url = new URL(window.location);
+                url.searchParams.set('lang', lang);
+                window.location.href = url.toString();
+            }
+
+            applyLanguage();
+            document.getElementById("set-lang-en").addEventListener("click", function () { setLanguage('en'); });
+            document.getElementById("set-lang-zh").addEventListener("click", function () { setLanguage('zh'); });
+        });
     </script>
+</head>
+<body>
 
+    <h1 id="welcome-text">Welcome to Lingyi's Personal Website</h1>
+    <p id="description-text">This is a personal website where you can learn more about me.</p>
+
+    <button id="set-lang-en">English</button>
+    <button id="set-lang-zh">中文</button>
+
+</body>
+</html>
     
-    
+
+
     <style>
         body {
             font-family: Arial, sans-serif;
