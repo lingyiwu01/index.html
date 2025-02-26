@@ -3,54 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lingyi's Personal Website</title>
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TY8F964W9T"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){ dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-TY8F964W9T');
-    </script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            function applyLanguage() {
-                const urlParams = new URLSearchParams(window.location.search);
-                const lang = urlParams.get('lang') || 'en'; // 默认英文
-
-                if (lang === 'zh') {
-                    document.getElementById('welcome-text').innerText = '欢迎来到 Lingyi 的个人网站';
-                    document.getElementById('description-text').innerText = '这是一个关于我的个人网站。';
-                } else {
-                    document.getElementById('welcome-text').innerText = "Welcome to Lingyi's Personal Website";
-                    document.getElementById('description-text').innerText = "This is a personal website where you can learn more about me.";
-                }
-            }
-
-            function setLanguage(lang) {
-                const url = new URL(window.location);
-                url.searchParams.set('lang', lang);
-                window.location.href = url.toString();
-            }
-
-            applyLanguage();
-            document.getElementById("set-lang-en").addEventListener("click", function () { setLanguage('en'); });
-            document.getElementById("set-lang-zh").addEventListener("click", function () { setLanguage('zh'); });
-        });
-    </script>
+    <title>Language Switcher</title>
+    <style>
+        #language-menu {
+            display: none; /* 默认隐藏 */
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 5px;
+            cursor: pointer;
+        }
+        #language-menu select {
+            border: none;
+            background: none;
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
+    <button id="toggle-lang-btn">Language</button>
+    <div id="language-menu">
+        <select id="language-select">
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+        </select>
+    </div>
 
-    <h1 id="welcome-text">Welcome to Lingyi's Personal Website</h1>
-    <p id="description-text">This is a personal website where you can learn more about me.</p>
+    <h1 id="title">Hello, world!</h1>
+    <p id="content">This is a simple example of language switching.</p>
 
-    <button id="set-lang-en">English</button>
-    <button id="set-lang-zh">中文</button>
+    <script>
+        const toggleBtn = document.getElementById("toggle-lang-btn");
+        const languageMenu = document.getElementById("language-menu");
+        const languageSelect = document.getElementById("language-select");
+        const title = document.getElementById("title");
+        const content = document.getElementById("content");
 
+        // 语言映射
+        const translations = {
+            en: {
+                title: "Hello, world!",
+                content: "This is a simple example of language switching."
+            },
+            zh: {
+                title: "你好，世界！",
+                content: "这是一个简单的语言切换示例。"
+            }
+        };
+
+        // 切换语言
+        function setLanguage(lang) {
+            localStorage.setItem("language", lang);
+            title.textContent = translations[lang].title;
+            content.textContent = translations[lang].content;
+        }
+
+        // 读取存储的语言
+        const savedLang = localStorage.getItem("language") || "en";
+        languageSelect.value = savedLang;
+        setLanguage(savedLang);
+
+        // 监听切换按钮
+        toggleBtn.addEventListener("click", () => {
+            languageMenu.style.display = languageMenu.style.display === "block" ? "none" : "block";
+        });
+
+        // 监听语言选择
+        languageSelect.addEventListener("change", (e) => {
+            setLanguage(e.target.value);
+        });
+    </script>
 </body>
 </html>
+
     
 
 
