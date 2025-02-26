@@ -14,6 +14,15 @@
         gtag('js', new Date());
         gtag('config', 'G-TY8F964W9T');
     </script>
+    
+    <script>
+        function setLanguage(lang) {
+            const url = new URL(window.location.href);
+            url.searchParams.set('lang', lang);
+            window.location.href = url.toString();
+        }
+    </script>
+    
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -185,14 +194,13 @@
 
 </head>
 <body>
-     <div>
-        <button onclick="setLanguage('en')">English</button>
-        <button onclick="setLanguage('zh')">中文</button>
-    </div>
-        <div class="language-switch">
-        <a href="?lang=en">English</a> |
-        <a href="?lang=zh">中文</a>
-    </div>
+    <div>
+        <label for="language-select">Language:</label>
+        <select id="language-select" onchange="setLanguage(this.value)">
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+        </select>
+    </div>   
     <header>
         </div>
         <div class="top-right-links">
