@@ -3,84 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Language Switcher</title>
-    <style>
-        #language-menu {
-            display: none; /* 默认隐藏 */
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: white;
-            border: 1px solid #ccc;
-            padding: 5px;
-            cursor: pointer;
-        }
-        #language-menu select {
-            border: none;
-            background: none;
-            font-size: 16px;
-        }
-    </style>
-</head>
-<body>
-    <button id="toggle-lang-btn">Language</button>
-    <div id="language-menu">
-        <select id="language-select">
-            <option value="en">English</option>
-            <option value="zh">中文</option>
-        </select>
-    </div>
+    <title>Lingyi's Personal Website</title>
 
-    <h1 id="title">Hello, world!</h1>
-    <p id="content">This is a simple example of language switching.</p>
-
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TY8F964W9T"></script>
     <script>
-        const toggleBtn = document.getElementById("toggle-lang-btn");
-        const languageMenu = document.getElementById("language-menu");
-        const languageSelect = document.getElementById("language-select");
-        const title = document.getElementById("title");
-        const content = document.getElementById("content");
-
-        // 语言映射
-        const translations = {
-            en: {
-                title: "Hello, world!",
-                content: "This is a simple example of language switching."
-            },
-            zh: {
-                title: "你好，世界！",
-                content: "这是一个简单的语言切换示例。"
-            }
-        };
-
-        // 切换语言
-        function setLanguage(lang) {
-            localStorage.setItem("language", lang);
-            title.textContent = translations[lang].title;
-            content.textContent = translations[lang].content;
-        }
-
-        // 读取存储的语言
-        const savedLang = localStorage.getItem("language") || "en";
-        languageSelect.value = savedLang;
-        setLanguage(savedLang);
-
-        // 监听切换按钮
-        toggleBtn.addEventListener("click", () => {
-            languageMenu.style.display = languageMenu.style.display === "block" ? "none" : "block";
-        });
-
-        // 监听语言选择
-        languageSelect.addEventListener("change", (e) => {
-            setLanguage(e.target.value);
-        });
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-TY8F964W9T');
     </script>
-</body>
-</html>
-
-    
-
-
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -94,26 +26,6 @@
             color: white;
             padding: 20px 0;
             position: relative;
-        }
-        .language-switch {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 8px 12px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-            font-size: 14px;
-            z-index: 1000;
-        }
-        .language-switch a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            margin: 0 5px;
-        }
-        .language-switch a:hover {
-            color: #007bff;
         }
         .top-right-buttons {
             position: absolute;
@@ -223,7 +135,10 @@
             .map-container iframe {
                 height: 200px; /* 最小高度 */
             }
-        }   
+        }
+
+
+
 </html>
         footer {
             background-color: #333;
@@ -249,17 +164,8 @@
             margin-bottom: 10px;
         }
     </style>
-
 </head>
 <body>
-     <div>
-        <button onclick="setLanguage('en')">English</button>
-        <button onclick="setLanguage('zh')">中文</button>
-    </div>  
-        <div class="language-switch">
-        <a href="?lang=en">English</a> | 
-        <a href="?lang=zh">中文</a>
-    </div>
     <header>
         </div>
         <div class="top-right-links">
@@ -305,6 +211,9 @@
             </iframe>
         </div>
     </div>
+
+
+
     <footer>
         <div class="follow-us">
             <a href="https://www.linkedin.com/in/lingyi-wu-a42097227/" class="linkedin-button" target="_blank">Follow me on LinkedIn</a>
@@ -312,7 +221,8 @@
             <a href="https://github.com/MarianaWu01/Databricks" class="databricks-button" target="_blank">View Databricks</a>
             <a href="https://www.youtube.com/watch?v=Jz9z0rK_YU4" class="youtube-button" target="_blank">Watch on YouTube</a>
         </div>
-        <p>&copy; 2025 Lingyi Wu's qualifications. All rights reserved.</p>
+        <p>&copy; 2024 Lingyi Wu's qualifications. All rights reserved.</p>
     </footer>
 </body>
 </html>
+
