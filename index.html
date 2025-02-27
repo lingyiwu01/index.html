@@ -21,7 +21,25 @@
             window.location.href = url.toString();
         }
     </script>
-    
+    <script>
+        // 获取浏览器的语言
+        const userLanguage = navigator.language || navigator.languages[0];
+        
+        // 输出语言信息到控制台（调试用）
+        console.log('Detected Language:', userLanguage);
+
+        // 根据检测到的语言切换页面内容
+        if (userLanguage.startsWith('zh')) {
+            // 中文内容
+            document.getElementById('welcome-message').textContent = '欢迎来到我的网站';
+            document.getElementById('intro-text').textContent = '这是一个自动检测语言并更改内容的示例。';
+        } else {
+            // 默认英文内容
+            document.getElementById('welcome-message').textContent = 'Welcome to My Website';
+            document.getElementById('intro-text').textContent = 'This is an example of automatic language detection and content change.';
+        }
+    </script>
+
     <style>
         body {
             font-family: Arial, sans-serif;
