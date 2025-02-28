@@ -90,70 +90,27 @@
             align-items: flex-start;
             margin: 20px 0;
         }
-
-        /* About Me 部分 */
         .bio-container {
-            flex: 2; /* 左边区域占据较大空间 */
+            flex: 1;
             text-align: left;
             background-color: white;
             padding: 20px;
             border-radius: 5px;
             margin-right: 20px;
         }
-
-        /* Map (My Location) 部分 */
+        .bio-container p {
+            color: black;
+        }
         .map-container {
-            flex: 1; /* 右边区域占据较小空间 */
+            flex: 1;
             max-width: 1000px;
             margin-left: 20px;
+            margin-right: 20px;
         }
-
         .map-container iframe {
             width: 100%;
             height: 600px;
             border: none;
-        }
-
-        /* Form 和 Contact Me 部分 */
-        .form-contact-container {
-            display: flex;
-            flex-direction: column;
-            margin-top: 20px;
-            width: 100%;
-        }
-
-        .form-container, .contact-container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        input, textarea {
-            margin: 10px 0;
-            padding: 10px;
-            width: 80%;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        button {
-            background: #007bff;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #0056b3;
         }
 
 
