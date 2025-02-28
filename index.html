@@ -244,13 +244,13 @@
         <p><strong>About Me:</strong></p>
         <p>As a lifelong learner with a deep-seated curiosity about the world, I have always been drawn to the field of analytics. I understand the significance of data-driven decision-making and take pleasure in providing valuable insights. My proficiency in diverse data analysis skills such as SQL, Python, R, Tableau, and SAS has enabled me to deliver impactful results. I am committed to constantly improving my data analysis skills and mindset to translate data into actionable insights, helping customers to make smarter decisions and companies to identify potential revenue opportunities.</p>
         <p>I have accumulated real-world experience through internships both on and off campus, including roles at Gilead Sciences, Guangfa Securities, China Securities, China CITIC Bank, and Shanghai Pudong Development Bank. I have also studied the Guzheng for over 10 years, earning national golden prizes multiple times. Now, I am actively seeking a full-time job in the United States!</p>
+
     <div class="container">
-        <!-- New container for "Leave your info" -->
         <div class="left-container">
             <div class="info-container">
                 <p><strong>Leave your info</strong></p>
-                <!-- Simplified form with Name, Email, and Phone -->
-                <form>
+                <!-- 保留原表单，并修改 action 为 Google Apps Script URL，并添加 id="contact-form" -->
+                <form id="contact-form" action="https://script.google.com/macros/s/AKfycbwbHba_nhjCbFCDnewcwfh1ynw1L4tNE98wNuC8Eh4XIs2bnlgzAcSTDnqszmMihZw6/exec" method="POST">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" placeholder="Enter your name">
 
@@ -265,6 +265,18 @@
                 </form>
             </div>
         </div>
+    </div>
+
+    <script>
+        // 监听表单提交事件
+        document.getElementById("contact-form").onsubmit = function(event) {
+            event.preventDefault(); // 阻止默认表单提交
+            // 显示成功提示框
+            alert("Thank you for your submission!");
+            // 可选：表单重置
+            document.getElementById("contact-form").reset();
+        };
+    </script>
 
     <!-- Bio container for contact information -->
     <div class="bio-container">
