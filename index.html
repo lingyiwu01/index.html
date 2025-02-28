@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -101,6 +101,56 @@
         .bio-container p {
             color: black;
         }
+
+
+        .left-container {
+            flex: 1;
+            margin-right: 20px;
+            min-width: 300px; /* 确保不会变得太小 */
+        }
+
+        .left-container .info-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .left-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .left-container form input {
+            margin-bottom: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+
+        .left-container form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border: none;
+            padding: 10px 20px;
+            width: auto;
+        }
+
+        .left-container form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+
+
+        
+
+
+
+
+        
         .map-container {
             flex: 0 0 auto;
             max-width: 1000px;
