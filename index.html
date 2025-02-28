@@ -1,3 +1,4 @@
+#有语言切换按钮了
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +14,7 @@
         gtag('js', new Date());
         gtag('config', 'G-TY8F964W9T');
     </script>
+
     <script>
         function setLanguage(lang) {
             const url = new URL(window.location.href);
@@ -20,68 +22,7 @@
             window.location.href = url.toString();
         }
     </script>
-    <script>
-        // 自动检测用户浏览器语言
-        function detectLanguage() {
-            const userLang = navigator.language || navigator.userLanguage; 
-            // 返回前两位语言代码（例如 'en' 或 'zh'）
-            return userLang.slice(0, 2);
-        }
-<script>
-    // 获取浏览器的语言
-    const userLanguage = navigator.language || navigator.languages[0];
 
-    // 输出语言信息到控制台（调试用）
-    console.log('Detected Language:', userLanguage);
-
-    // 根据检测到的语言切换页面内容
-    window.addEventListener('DOMContentLoaded', function() {
-        // 设置初始语言
-        if (userLanguage.startsWith('zh')) {
-            // 中文内容
-            document.getElementById('welcome-message').textContent = '欢迎来到我的网站';
-            document.getElementById('intro-text').textContent = '这是一个自动检测语言并更改内容的示例。';
-            document.getElementById('bio-text').textContent = '作为一名终身学习者，我对分析领域充满了深厚的好奇心。我理解数据驱动决策的重要性，并且喜欢提供有价值的见解。我在SQL、Python、R、Tableau、SAS等数据分析工具方面有丰富的经验，并且致力于不断提升我的数据分析技能。';
-            document.getElementById('contact-me-text').textContent = '联系我：';
-            document.getElementById('name-label').textContent = '姓名：';
-            document.getElementById('email-label').textContent = '电子邮件：';
-            document.getElementById('message-label').textContent = '留言：';
-            document.querySelector('button[type="submit"]').textContent = '提交';
-        } else {
-            // 默认英文内容
-            document.getElementById('welcome-message').textContent = 'Welcome to My Website';
-            document.getElementById('intro-text').textContent = 'This is an example of automatic language detection and content change.';
-            document.getElementById('bio-text').textContent = 'As a lifelong learner with a deep-seated curiosity about the world, I have always been drawn to the field of analytics. I understand the significance of data-driven decision-making and take pleasure in providing valuable insights. My proficiency in diverse data analysis skills such as SQL, Python, R, Tableau, and SAS has enabled me to deliver impactful results.';
-            document.getElementById('contact-me-text').textContent = 'Contact Me:';
-            document.getElementById('name-label').textContent = 'Name:';
-            document.getElementById('email-label').textContent = 'Email:';
-            document.getElementById('message-label').textContent = 'Message:';
-            document.querySelector('button[type="submit"]').textContent = 'Submit';
-        }
-
-        // 设置语言选择框的初始值
-        const langSelect = document.getElementById('language-select');
-        if (userLanguage.startsWith('zh')) {
-            langSelect.value = 'zh';
-        } else {
-            langSelect.value = 'en';
-        }
-    });
-
-    // 切换语言的函数
-    function setLanguage(lang) {
-        const url = new URL(window.location.href);
-        url.searchParams.set('lang', lang);
-        window.location.href = url.toString();
-    }
-</script>
-
-
-
-
-
-
-    
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -150,43 +91,28 @@
             align-items: flex-start;
             margin: 20px 0;
         }
-
-        .left-container {
-            width: 50%; /* 让左侧容器占据页面左半部分 */
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start; /* 确保上下垂直排列 */
-        }
-
-        .form-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
+        .bio-container {
+            flex: 1;
+            text-align: left;
             background-color: white;
-            border-radius: 5px;
-            margin-bottom: 20px; /* 添加间距，确保表单和 contact me 之间有空间 */
-        }
-        
-        .contact-me-container {
             padding: 20px;
-            background-color: white;
             border-radius: 5px;
+            margin-right: 20px;
         }
-
+        .bio-container p {
+            color: black;
+        }
         .map-container {
-            width: 50%; /* 让地图占据右半部分 */
+            flex: 1;
             max-width: 1000px;
-            padding: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
         }
-
         .map-container iframe {
             width: 100%;
             height: 600px;
             border: none;
         }
-
-   
 
         /* 响应式调整 */
         @media (max-width: 1024px) {
@@ -279,21 +205,6 @@
         <p>As a lifelong learner with a deep-seated curiosity about the world, I have always been drawn to the field of analytics. I understand the significance of data-driven decision-making and take pleasure in providing valuable insights. My proficiency in diverse data analysis skills such as SQL, Python, R, Tableau, and SAS has enabled me to deliver impactful results. I am committed to constantly improving my data analysis skills and mindset to translate data into actionable insights, helping customers to make smarter decisions and companies to identify potential revenue opportunities.</p>
         <p>I have accumulated real-world experience through internships both on and off campus, including roles at Gilead Sciences, Guangfa Securities, China Securities, China CITIC Bank, and Shanghai Pudong Development Bank. I have also studied the Guzheng for over 10 years, earning national golden prizes multiple times. Now, I am actively seeking a full-time job in the United States!</p>
     </div>
-        <div class="form-container">
-        <h2>Fill in Your Information</h2>
-        <form id="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-
-            <button type="submit">Submit</button>
-        </form>
-    </div>
 
     <div class="container">
         <div class="bio-container">
@@ -324,5 +235,3 @@
     </footer>
 </body>
 </html>
-
-
