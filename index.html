@@ -13,7 +13,6 @@
         gtag('js', new Date());
         gtag('config', 'G-TY8F964W9T');
     </script>
-
     <script>
         function setLanguage(lang) {
             const url = new URL(window.location.href);
@@ -21,7 +20,68 @@
             window.location.href = url.toString();
         }
     </script>
+    <script>
+        // 自动检测用户浏览器语言
+        function detectLanguage() {
+            const userLang = navigator.language || navigator.userLanguage; 
+            // 返回前两位语言代码（例如 'en' 或 'zh'）
+            return userLang.slice(0, 2);
+        }
+<script>
+    // 获取浏览器的语言
+    const userLanguage = navigator.language || navigator.languages[0];
 
+    // 输出语言信息到控制台（调试用）
+    console.log('Detected Language:', userLanguage);
+
+    // 根据检测到的语言切换页面内容
+    window.addEventListener('DOMContentLoaded', function() {
+        // 设置初始语言
+        if (userLanguage.startsWith('zh')) {
+            // 中文内容
+            document.getElementById('welcome-message').textContent = '欢迎来到我的网站';
+            document.getElementById('intro-text').textContent = '这是一个自动检测语言并更改内容的示例。';
+            document.getElementById('bio-text').textContent = '作为一名终身学习者，我对分析领域充满了深厚的好奇心。我理解数据驱动决策的重要性，并且喜欢提供有价值的见解。我在SQL、Python、R、Tableau、SAS等数据分析工具方面有丰富的经验，并且致力于不断提升我的数据分析技能。';
+            document.getElementById('contact-me-text').textContent = '联系我：';
+            document.getElementById('name-label').textContent = '姓名：';
+            document.getElementById('email-label').textContent = '电子邮件：';
+            document.getElementById('message-label').textContent = '留言：';
+            document.querySelector('button[type="submit"]').textContent = '提交';
+        } else {
+            // 默认英文内容
+            document.getElementById('welcome-message').textContent = 'Welcome to My Website';
+            document.getElementById('intro-text').textContent = 'This is an example of automatic language detection and content change.';
+            document.getElementById('bio-text').textContent = 'As a lifelong learner with a deep-seated curiosity about the world, I have always been drawn to the field of analytics. I understand the significance of data-driven decision-making and take pleasure in providing valuable insights. My proficiency in diverse data analysis skills such as SQL, Python, R, Tableau, and SAS has enabled me to deliver impactful results.';
+            document.getElementById('contact-me-text').textContent = 'Contact Me:';
+            document.getElementById('name-label').textContent = 'Name:';
+            document.getElementById('email-label').textContent = 'Email:';
+            document.getElementById('message-label').textContent = 'Message:';
+            document.querySelector('button[type="submit"]').textContent = 'Submit';
+        }
+
+        // 设置语言选择框的初始值
+        const langSelect = document.getElementById('language-select');
+        if (userLanguage.startsWith('zh')) {
+            langSelect.value = 'zh';
+        } else {
+            langSelect.value = 'en';
+        }
+    });
+
+    // 切换语言的函数
+    function setLanguage(lang) {
+        const url = new URL(window.location.href);
+        url.searchParams.set('lang', lang);
+        window.location.href = url.toString();
+    }
+</script>
+
+
+
+
+
+
+    
     <style>
         body {
             font-family: Arial, sans-serif;
