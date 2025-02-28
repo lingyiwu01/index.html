@@ -161,19 +161,13 @@
         </select>
     </div>   
     <script>
-        // 获取浏览器的语言
         const userLanguage = navigator.language || navigator.languages[0];
-        
-        // 输出语言信息到控制台（调试用）
         console.log('Detected Language:', userLanguage);
-
-        // 根据检测到的语言切换页面内容
         if (userLanguage.startsWith('zh')) {
             // 中文内容
             document.getElementById('welcome-message').textContent = '欢迎来到我的网站';
             document.getElementById('intro-text').textContent = '这是一个自动检测语言并更改内容的示例。';
         } else {
-            // 默认英文内容
             document.getElementById('welcome-message').textContent = 'Welcome to My Website';
             document.getElementById('intro-text').textContent = 'This is an example of automatic language detection and content change.';
         }
@@ -204,6 +198,22 @@
         <p>As a lifelong learner with a deep-seated curiosity about the world, I have always been drawn to the field of analytics. I understand the significance of data-driven decision-making and take pleasure in providing valuable insights. My proficiency in diverse data analysis skills such as SQL, Python, R, Tableau, and SAS has enabled me to deliver impactful results. I am committed to constantly improving my data analysis skills and mindset to translate data into actionable insights, helping customers to make smarter decisions and companies to identify potential revenue opportunities.</p>
         <p>I have accumulated real-world experience through internships both on and off campus, including roles at Gilead Sciences, Guangfa Securities, China Securities, China CITIC Bank, and Shanghai Pudong Development Bank. I have also studied the Guzheng for over 10 years, earning national golden prizes multiple times. Now, I am actively seeking a full-time job in the United States!</p>
     </div>
+    <div class="form-container">
+    <h2>Fill in Your Information</h2>
+    <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
 
     <div class="container">
         <div class="bio-container">
