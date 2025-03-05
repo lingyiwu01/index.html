@@ -250,13 +250,7 @@
             <div class="info-container">
                 <p><strong>Leave your info</strong></p>
                 <!-- 保留原表单，并修改 action 为 Google Apps Script URL，并添加 id="contact-form" -->
-
-
-
-
-
-                
-                <form id="contact-form" action="https://script.google.com/macros/s/AKfycbwbHba_nhjCbFCDnewcwfh1ynw1L4tNE98wNuC8Eh4XIs2bnlgzAcSTDnqszmMihZw6/exec" method="POST">
+                <form id="contact-form" action="https://script.google.com/macros/s/AKfycbxxF-JzdOdKGNU6ZMPx8-zU9xdnQgp4E4icdvILJEqwl5ikzbLjiAVoMZkkO4MtkyBx/exec">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" placeholder="Enter your name">
 
@@ -277,6 +271,31 @@
         // 监听表单提交事件
         document.getElementById("contact-form").onsubmit = function(event) {
             event.preventDefault(); // 阻止默认表单提交
+
+
+            var formData = new FormData(this);
+            var data = new URLSearchParams(formData).toString();
+
+            fetch(this.action, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body: data
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert("Thank you for your submission!"); // 提交成功后显示提示
+                    document.getElementById("contact-form").reset(); // 重置表单
+                } else {
+                    alert("Something went wrong. Please try again.");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("Error occurred while submitting. Please try again.");
+            });
+        };   
             // 显示成功提示框
             alert("Thank you for your submission!");
             // 可选：表单重置
