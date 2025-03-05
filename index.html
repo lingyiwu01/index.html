@@ -271,8 +271,6 @@
         // 监听表单提交事件
         document.getElementById("contact-form").onsubmit = function(event) {
             event.preventDefault(); // 阻止默认表单提交
-
-
             var formData = new FormData(this);
             var data = new URLSearchParams(formData).toString();
 
@@ -296,6 +294,18 @@
                 alert("Error occurred while submitting. Please try again.");
             });
         };   
+
+        function validateEmail() {
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message");
+            var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!regex.test(email)) {
+                message.textContent = "Please enter a valid email address.";
+                message.style.color = "red";
+            } else {
+                message.textContent = "";
+            }
+        }
             // 显示成功提示框
             alert("Thank you for your submission!");
             // 可选：表单重置
