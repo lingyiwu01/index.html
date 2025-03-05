@@ -252,268 +252,20 @@
                 <!-- 保留原表单，并修改 action 为 Google Apps Script URL，并添加 id="contact-form" -->
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lingyi's Personal Website</title>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TY8F964W9T"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-TY8F964W9T');
-    </script>
 
-    <script>
-        function setLanguage(lang) {
-            const url = new URL(window.location.href);
-            url.searchParams.set('lang', lang);
-            window.location.href = url.toString();
-        }
-    </script>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 20px 0;
-            position: relative;
-        }
-        h1 {
-            color: white;
-            margin: 0;
-        }
-        p {
-            margin: 10px 20px;
-            line-height: 1.6;
-        }
-
-        /* 右上角链接和语言选择框 */
-        .top-right-links {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            align-items: center;
-            flex-direction: row;
-        }
-        .top-right-links a {
-            text-decoration: underline;
-            color: white;
-            margin-left: 15px;
-        }
-        .top-right-links select {
-            background: none;
-            border: none;
-            color: black;
-            font-size: 14px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-left: 15px; 
-        }
-
-        /* 按钮样式 */
-        .linkedin-button, .github-button, .databricks-button, .youtube-button {
-            text-decoration: none;
-            color: white;
-            background-color: #ff0050;
-            padding: 10px 20px;
-            border-radius: 5px;
-            margin: 5px;
-            display: inline-block;
-        }
-        .linkedin-button:hover, .github-button:hover, .databricks-button:hover, .youtube-button:hover {
-            background-color: #cc0040;
-        }
-
-        /* 主要内容布局 */
-        .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin: 20px 0;
-        }
-        .bio-container {
-            flex: 1;
-            text-align: left;
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            margin-right: 20px;
-        }
-        .bio-container p {
-            color: black;
-        }
-        .left-container {
-            flex: 1;
-            margin-right: 20px;
-            min-width: 300px; /* 确保不会变得太小 */
-        }
-
-        .left-container .info-container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            text-align:left;
-        }
-
-        .left-container form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .left-container form input {
-            margin-bottom: 10px;
-            padding: 10px;
-            box-sizing: border-box;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            width: 100%;
-        }
-
-        .left-container form input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            cursor: pointer;
-            border: none;
-            padding: 10px 20px;
-            width: auto;
-        }
-
-        .left-container form input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-        
-        .map-container {
-            flex: 0 0 auto;
-            max-width: 600px;
-            margin-left: 20px;
-            margin-right: 20px;
-        }
-        .map-container iframe {
-            width: 100%;
-            height: 600px;
-            border: none;
-        }
-
-        /* 响应式调整 */
-        @media (max-width: 1024px) {
-            .map-container iframe {
-                height: 300px;
-            }
-        }
-        @media (max-width: 768px) {
-            .map-container iframe {
-                height: 250px;
-            }
-        }
-        @media (max-width: 480px) {
-            .map-container iframe {
-                height: 200px;
-            }
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-            position: relative;
-            text-align: center;
-            margin-top: 20px;
-        }
-        footer a {
-            color: white;
-            background-color: #ff0050;
-            padding: 5px 10px;
-            border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
-            margin: 5px;
-        }
-        footer a:hover {
-            background-color: #cc0040;
-        }
-    </style>
-</head>
-<body>
-    <div>
-        <label for="language-select">Language:</label>
-        <select id="language-select" onchange="setLanguage(this.value)">
-            <option value="en">English</option>
-            <option value="zh">中文</option>
-        </select>
-    </div>   
-    <script>
-        // 获取浏览器的语言
-        const userLanguage = navigator.language || navigator.languages[0];
-        
-        // 输出语言信息到控制台（调试用）
-        console.log('Detected Language:', userLanguage);
-
-        // 根据检测到的语言切换页面内容
-        if (userLanguage.startsWith('zh')) {
-            // 中文内容
-            document.getElementById('welcome-message').textContent = '欢迎来到我的网站';
-            document.getElementById('intro-text').textContent = '这是一个自动检测语言并更改内容的示例。';
-        } else {
-            // 默认英文内容
-            document.getElementById('welcome-message').textContent = 'Welcome to My Website';
-            document.getElementById('intro-text').textContent = 'This is an example of automatic language detection and content change.';
-        }
-    </script>
-    <header>
-        </div>
-        <div class="top-right-links">
-            <a href="https://www.linkedin.com/in/lingyi-wu-a42097227/" target="_blank">Linkedin</a>
-            <a href="https://github.com/MarianaWu01/lingyiwu.github.com" target="_blank">Github</a>
-            <a href="https://github.com/MarianaWu01/Databricks" target="_blank">Databricks</a>
-            <a href="https://www.youtube.com/watch?v=Jz9z0rK_YU4" target="_blank">YouTube</a>
-            <a href="https://marianawu01.github.io/01Shopping-/" target="_blank">Shopping Cart</a>
-
-        </div>
-        <h1>Welcome to Lingyi's Personal Website!</h1>
-        <p>Welcome to my world!</p>
-        <div class="follow-us">
-            <a href="https://www.linkedin.com/in/lingyi-wu-a42097227/" class="linkedin-button" target="_blank">Follow me on LinkedIn</a>
-            <a href="https://github.com/MarianaWu01/lingyiwu.github.com" class="github-button" target="_blank">View my GitHub</a>
-            <a href="https://github.com/MarianaWu01/Databricks" class="databricks-button" target="_blank">View Databricks</a>
-            <a href="https://www.youtube.com/watch?v=Jz9z0rK_YU4" class="youtube-button" target="_blank">Watch on YouTube</a>
-            <a href="https://marianawu01.github.io/01Shopping-/" class="youtube-button" target="_blank">Shopping Cart</a>
-        </div>
-    </header>
-
-    <div class="bio-container">
-        <p><strong>About Me:</strong></p>
-        <p>As a lifelong learner with a deep-seated curiosity about the world, I have always been drawn to the field of analytics. I understand the significance of data-driven decision-making and take pleasure in providing valuable insights. My proficiency in diverse data analysis skills such as SQL, Python, R, Tableau, and SAS has enabled me to deliver impactful results. I am committed to constantly improving my data analysis skills and mindset to translate data into actionable insights, helping customers to make smarter decisions and companies to identify potential revenue opportunities.</p>
-        <p>I have accumulated real-world experience through internships both on and off campus, including roles at Gilead Sciences, Guangfa Securities, China Securities, China CITIC Bank, and Shanghai Pudong Development Bank. I have also studied the Guzheng for over 10 years, earning national golden prizes multiple times. Now, I am actively seeking a full-time job in the United States!</p>
-
-    <div class="container">
-        <div class="left-container">
-            <div class="info-container">
-                <p><strong>Leave your info</strong></p>
-                <!-- 表单 -->
+                
                 <form id="contact-form" action="https://script.google.com/macros/s/AKfycbwbHba_nhjCbFCDnewcwfh1ynw1L4tNE98wNuC8Eh4XIs2bnlgzAcSTDnqszmMihZw6/exec" method="POST">
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    <input type="text" id="name" name="name" placeholder="Enter your name">
 
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required onkeyup="validateEmail()">
+                    <input type="text" id="email" name="email" placeholder="Enter your email" onkeyup="validateEmail()">
                     <p id="message"></p>
 
                     <label for="phone">Phone:</label>
-                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                    <input type="text" id="phone" name="phone" placeholder="Enter your phone number">
 
                     <input type="submit" value="Submit">
                 </form>
@@ -521,49 +273,15 @@
         </div>
     </div>
 
-    <!-- 提交后提示 -->
     <script>
-        // 表单提交事件
+        // 监听表单提交事件
         document.getElementById("contact-form").onsubmit = function(event) {
-            event.preventDefault(); // 阻止表单的默认提交行为
-
-            // 提交表单数据到 Google Apps Script URL
-            var formData = new FormData(this);
-            var data = new URLSearchParams(formData).toString();
-
-            fetch(this.action, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/x-www-form-urlencoded"
-                },
-                body: data
-            })
-            .then(response => {
-                if (response.ok) {
-                    alert("Thank you for your submission!"); // 提交成功后显示提示
-                    document.getElementById("contact-form").reset(); // 重置表单
-                } else {
-                    alert("Something went wrong. Please try again.");
-                }
-            })
-            .catch(error => {
-                console.error("Error:", error);
-                alert("Error occurred while submitting. Please try again.");
-            });
+            event.preventDefault(); // 阻止默认表单提交
+            // 显示成功提示框
+            alert("Thank you for your submission!");
+            // 可选：表单重置
+            document.getElementById("contact-form").reset();
         };
-        
-        // 邮箱验证（可选）
-        function validateEmail() {
-            var email = document.getElementById("email").value;
-            var message = document.getElementById("message");
-            var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-            if (!regex.test(email)) {
-                message.textContent = "Please enter a valid email address.";
-                message.style.color = "red";
-            } else {
-                message.textContent = "";
-            }
-        }
     </script>
 
     <!-- Bio container for contact information -->
@@ -597,38 +315,4 @@
 </body>
 </html>
 
-
-
-
- 
-    <!-- Bio container for contact information -->
-    <div class="bio-container">
-        <p><strong>Contact Me:</strong></p>
-        <p>Email: <a href="mailto:lingyiwu@usc.edu">lingyiwu@usc.edu</a></p>
-        <p>Phone: <a href="tel:2134215004">213-421-5004</a></p>
-        <p>Video: <a href="https://m.uhomes.com/liveplayback/106107?xcode=000cc674fea9025c288c&share_id=261496&app_id=11&sharetag=moments&language=zh&invite_code=BWMHPFFnBjdUaAM6" target="_blank">Watch my video</a></p>
-    </div>
-</div>
-
-        <div class="map-container">
-            <h2>My Location</h2>
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3306.899045923038!2d-118.29994812370973!3d34.02080221938891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c7f8f730859f%3A0x266dd8da0dd295c8!2s1294%20W%2037th%20St%2C%20Los%20Angeles%2C%20CA%2090007!5e0!3m2!1sen!2sus!4v1737742394737!5m2!1sen!2sus"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-        </div>
-    </div>
-    <footer>
-        <div class="follow-us">
-            <a href="https://www.linkedin.com/in/lingyi-wu-a42097227/" class="linkedin-button" target="_blank">Follow me on LinkedIn</a>
-            <a href="https://github.com/MarianaWu01/lingyiwu.github.com" class="github-button" target="_blank">View my GitHub</a>
-            <a href="https://github.com/MarianaWu01/Databricks" class="databricks-button" target="_blank">View Databricks</a>
-            <a href="https://www.youtube.com/watch?v=Jz9z0rK_YU4" class="youtube-button" target="_blank">Watch on YouTube</a>
-        </div>
-        <p>&copy; 2025 Lingyi Wu's qualifications. All rights reserved.</p>
-    </footer>
-</body>
-</html>
 
