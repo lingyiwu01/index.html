@@ -93,6 +93,53 @@
         .linkedin-button:hover, .github-button:hover, .databricks-button:hover, .youtube-button:hover {
             background-color: #cc0040; /* Darker red for hover effect */
         }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin: 20px 0;
+        }
+        .bio-container {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .map-container {
+            flex: 1;
+            max-width: 1000px; /* 最大宽度调整为800px */
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .map-container iframe {
+            width: 100%; /* 确保 iframe 宽度响应父容器 */
+            height: 600px; /* 默认高度为400px */
+            border: none;
+        }
+
+        /* 平板设备 (小于1024px) */
+        @media (max-width: 1024px) {
+            .map-container iframe {
+                height: 300px; /* 缩小高度 */
+            }
+        }
+
+        /* 手机设备 (小于768px) */
+        @media (max-width: 768px) {
+            .map-container iframe {
+                height: 250px; /* 再次缩小高度 */
+            }
+        }
+
+        /* 小屏幕手机 (小于480px) */
+        @media (max-width: 480px) {
+            .map-container iframe {
+                height: 200px; /* 最小高度 */
+            }
+        }
+
+
+
+</html>
         footer {
             background-color: #333;
             color: white;
@@ -126,6 +173,8 @@
             <a href="https://github.com/MarianaWu01/lingyiwu.github.com" target="_blank">Github</a>
             <a href="https://github.com/MarianaWu01/Databricks" target="_blank">Databricks</a>
             <a href="https://www.youtube.com/watch?v=Jz9z0rK_YU4" target="_blank">YouTube</a>
+            <a href="https://marianawu01.github.io/01Shopping-/" target="_blank">Shopping Cart</a>
+
         </div>
         <h1>Welcome to Lingyi's Personal Website!</h1>
         <p>Welcome to my world!</p>
@@ -134,6 +183,7 @@
             <a href="https://github.com/MarianaWu01/lingyiwu.github.com" class="github-button" target="_blank">View my GitHub</a>
             <a href="https://github.com/MarianaWu01/Databricks" class="databricks-button" target="_blank">View Databricks</a>
             <a href="https://www.youtube.com/watch?v=Jz9z0rK_YU4" class="youtube-button" target="_blank">Watch on YouTube</a>
+            <a href="https://marianawu01.github.io/01Shopping-/" class="youtube-button" target="_blank">Shopping Cart</a>
         </div>
     </header>
 
@@ -141,11 +191,29 @@
         <p><strong>About Me:</strong></p>
         <p>As a lifelong learner with a deep-seated curiosity about the world, I have always been drawn to the field of analytics. I understand the significance of data-driven decision-making and take pleasure in providing valuable insights. My proficiency in diverse data analysis skills such as SQL, Python, R, Tableau, and SAS has enabled me to deliver impactful results. I am committed to constantly improving my data analysis skills and mindset to translate data into actionable insights, helping customers to make smarter decisions and companies to identify potential revenue opportunities.</p>
         <p>I have accumulated real-world experience through internships both on and off campus, including roles at Gilead Sciences, Guangfa Securities, China Securities, China CITIC Bank, and Shanghai Pudong Development Bank. I have also studied the Guzheng for over 10 years, earning national golden prizes multiple times. Now, I am actively seeking a full-time job in the United States!</p>
-        <p><strong>Contact Me:</strong></p>
-        <p>Email: <a href="mailto:lingyiwu@usc.edu">lingyiwu@usc.edu</a></p>
-        <p>Phone: <a href="tel:2134215004">213-421-5004</a></p>
-        <p>Video: <a href="https://m.uhomes.com/liveplayback/106107?xcode=000cc674fea9025c288c&share_id=261496&app_id=11&sharetag=moments&language=zh&invite_code=BWMHPFFnBjdUaAM6" target="_blank">Watch my video</a></p>
     </div>
+
+    <div class="container">
+        <div class="bio-container">
+            <p><strong>Contact Me:</strong></p>
+            <p>Email: <a href="mailto:lingyiwu@usc.edu">lingyiwu@usc.edu</a></p>
+            <p>Phone: <a href="tel:2134215004">213-421-5004</a></p>
+            <p>Video: <a href="https://m.uhomes.com/liveplayback/106107?xcode=000cc674fea9025c288c&share_id=261496&app_id=11&sharetag=moments&language=zh&invite_code=BWMHPFFnBjdUaAM6" target="_blank">Watch my video</a></p>
+        </div>
+
+        <div class="map-container">
+            <h2>My Location</h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3306.899045923038!2d-118.29994812370973!3d34.02080221938891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c7f8f730859f%3A0x266dd8da0dd295c8!2s1294%20W%2037th%20St%2C%20Los%20Angeles%2C%20CA%2090007!5e0!3m2!1sen!2sus!4v1737742394737!5m2!1sen!2sus"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+
+
+
     <footer>
         <div class="follow-us">
             <a href="https://www.linkedin.com/in/lingyi-wu-a42097227/" class="linkedin-button" target="_blank">Follow me on LinkedIn</a>
