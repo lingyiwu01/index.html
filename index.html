@@ -99,9 +99,50 @@
             align-items: flex-start;
             margin: 20px 0;
         }
-        .bio-container {
+
+        .left-column, .map-container {
             flex: 1;
-            margin-right: 20px;
+            min-width: 320px;
+        }
+
+        .info-form, .bio-container {
+            background-color: #fff5f5;
+            padding: 20px;
+            border: 2px solid #cc0000;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .info-form h2, .map-container h2 {
+            color: #cc0000;
+            margin-top: 0;
+        }
+
+        .info-form label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .info-form input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .info-form button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #cc0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .info-form button:hover {
+            background-color: #a30000;
         }
         .map-container {
             flex: 1;
