@@ -12,15 +12,45 @@
         gtag('js', new Date());
         gtag('config', 'G-TY8F964W9T');
     </script>
-    <script>
+<!--     <script>
       document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("contactForm").addEventListener("submit", function (event) {
           event.preventDefault(); 
           document.getElementById("successMessage").textContent = "Success!";
         });
       });
-    </script>
+    </script> -->
 
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("contactForm").addEventListener("submit", function (event) {
+                event.preventDefault(); // 阻止默认的表单提交行为
+
+            // 获取表单数据
+                var formData = new FormData(this);
+
+            // 提交表单数据到 Zapier Webhook
+                fetch(this.action, {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => {
+                // 如果请求成功，显示“Success!”消息
+                    if (response.ok) {
+                        document.getElementById("successMessage").textContent = "Success! Your form has been submitted.";
+                        document.getElementById("contactForm").reset(); // 提交后清空表单
+                    } else {
+                        document.getElementById("successMessage").textContent = "There was an error with your submission. Please try again.";
+                    }
+                })
+                .catch(error => {
+                // 如果发生错误，显示错误消息
+                    document.getElementById("successMessage").textContent = "There was an error with your submission. Please try again.";
+                });
+            });
+        });
+    </script>
 
 
  
