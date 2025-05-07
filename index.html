@@ -7,7 +7,6 @@
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TY8F964W9T"></script>
-    <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -28,7 +27,7 @@
       // 显示成功消息
           document.getElementById("successMessage").textContent = "Submission Successful!";
           document.getElementById("successMessage").style.color = "green";
-          
+      
       // 清空表单
           document.getElementById("contactForm").reset();
         } else {
@@ -40,6 +39,7 @@
   // 为表单绑定 submit 事件
       document.getElementById("contactForm").addEventListener("submit", validateEmail);
     </script>
+    
     <style>
         body {
             font-family: Arial, sans-serif;
