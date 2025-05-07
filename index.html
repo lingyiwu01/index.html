@@ -12,31 +12,12 @@
         gtag('js', new Date());
         gtag('config', 'G-TY8F964W9T');
     </script>
-<!--     <script>
+    <script>
       document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("contactForm").addEventListener("submit", function (event) {
           event.preventDefault(); 
           document.getElementById("successMessage").textContent = "Success!";
         });
-      });
-    </script> -->
-
-
-
-
-    <script>
-      document.getElementById("myForm").addEventListener("submit", function(e) {
-        e.preventDefault(); // 阻止跳转
-
-    // 可选：发送给 Zapier
-        fetch("https://hooks.zapier.com/hooks/catch/xxxxx/yyyyy", {
-          method: "POST",
-          headers: {"Content-Type": "application/json"},
-          body: JSON.stringify({ name: e.target.name.value })
-        });
-
-    // 显示绿色 Success! 字
-        document.getElementById("successMessage").style.display = "block";
       });
     </script>
     <style>
