@@ -225,17 +225,6 @@
     </style>
 </head>
 <body>
-    <form id="contactForm">
-        <label for="email">Email:</label>
-        <input type="text" id="email" onkeyup="validateEmail(event)">
-        <p id="message"></p>
-        <button type="submit" onclick="validateEmail(event)">Submit</button>
-    </form>
-
-    <!-- 提交成功提示 -->
-    <p id="successMessage"></p>
-</body>
-<body>
     <header>
         </div>
         <div class="top-right-links">
@@ -268,7 +257,7 @@
     <div class="left-column">
         <div class="info-form">
             <h2>Leave Your Information</h2>
-            <form action="#" method="post">
+            <form id="contactForm" action="#" method="post">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
 
@@ -277,9 +266,10 @@
 
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
-
-                <button type="submit">Submit</button>
+                <p id="message"></p>
+                <button type="submit" onclick="validateEmail(event)">Submit</button>
             </form>
+            <p id="successMessage"></p>
         </div>
 
         <div class="bio-container">
