@@ -15,12 +15,15 @@
     </script>
     <script>
         function validateEmail(event) {
+            event.preventDefault();
             const email = document.getElementById("email").value;
             const message = document.getElementById("message");
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (emailRegex.test(email)) {
                 message.textContent = "Valid Email";
                 message.style.color = "green";
+                document.getElementById("successMessage").textContent = "Submission Successful!";
+                document.getElementById("successMessage").style.color = "green";
             } else {
                 message.textContent = "Invalid Email";
                 message.style.color = "red";
