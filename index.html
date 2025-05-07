@@ -14,21 +14,31 @@
         gtag('config', 'G-TY8F964W9T');
     </script>
     <script>
-        function validateEmail(event) {
-            event.preventDefault();
-            const email = document.getElementById("email").value;
-            const message = document.getElementById("message");
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (emailRegex.test(email)) {
-                message.textContent = "Valid Email";
-                message.style.color = "green";
-                document.getElementById("successMessage").textContent = "Submission Successful!";
-                document.getElementById("successMessage").style.color = "green";
-            } else {
-                message.textContent = "Invalid Email";
-                message.style.color = "red";
-            }
+      function validateEmail(event) {
+        event.preventDefault(); // 阻止表单默认提交
+
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message");
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (emailRegex.test(email)) {
+          message.textContent = "Valid Email";
+          message.style.color = "green";
+
+      // 显示成功消息
+          document.getElementById("successMessage").textContent = "Submission Successful!";
+          document.getElementById("successMessage").style.color = "green";
+          
+      // 清空表单
+          document.getElementById("contactForm").reset();
+        } else {
+          message.textContent = "Invalid Email";
+          message.style.color = "red";
         }
+      }
+
+  // 为表单绑定 submit 事件
+      document.getElementById("contactForm").addEventListener("submit", validateEmail);
     </script>
     <style>
         body {
