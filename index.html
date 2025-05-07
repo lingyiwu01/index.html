@@ -13,22 +13,30 @@
         gtag('config', 'G-TY8F964W9T');
     </script>
     <script>
-      function validateEmail(event) {
+      function delay(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
+      async function validateEmail(event) {
         event.preventDefault(); // 阻止表单默认提交
 
         const email = document.getElementById("email").value;
         const message = document.getElementById("message");
+        const successMessage = document.getElementById("successMessage");
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (emailRegex.test(email)) {
           message.textContent = "Valid Email";
           message.style.color = "green";
 
+      // 等待 2 秒再显示成功消息
+          await delay(2000);  // 延迟 2 秒
+
       // 显示成功消息
-          document.getElementById("successMessage").textContent = "Submission Successful!";
-          document.getElementById("successMessage").style.color = "green";
+          successMessage.textContent = "Submission Successful!";
+          successMessage.style.color = "green";
       
-      // 清空表单
+      // 重置表单
           document.getElementById("contactForm").reset();
         } else {
           message.textContent = "Invalid Email";
@@ -39,7 +47,7 @@
   // 为表单绑定 submit 事件
       document.getElementById("contactForm").addEventListener("submit", validateEmail);
     </script>
-    
+
     <style>
         body {
             font-family: Arial, sans-serif;
