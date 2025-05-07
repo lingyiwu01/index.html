@@ -225,6 +225,17 @@
     </style>
 </head>
 <body>
+    <form id="contactForm">
+        <label for="email">Email:</label>
+        <input type="text" id="email" onkeyup="validateEmail(event)">
+        <p id="message"></p>
+        <button type="submit" onclick="validateEmail(event)">Submit</button>
+    </form>
+
+    <!-- 提交成功提示 -->
+    <p id="successMessage"></p>
+</body>
+<body>
     <header>
         </div>
         <div class="top-right-links">
@@ -278,6 +289,7 @@
             <p>Video: <a href="https://m.uhomes.com/liveplayback/106107?xcode=000cc674fea9025c288c&share_id=261496&app_id=11&sharetag=moments&language=zh&invite_code=BWMHPFFnBjdUaAM6" target="_blank">Watch my video</a></p>
         </div>
     </div>
+        
 
         <div class="map-container">
             <h2>My Location</h2>
@@ -289,9 +301,6 @@
             </iframe>
         </div>
     </div>
-
-
-
     <footer>
         <div class="follow-us">
             <a href="https://www.linkedin.com/in/lingyi-wu-a42097227/" class="linkedin-button" target="_blank">Follow me on LinkedIn</a>
