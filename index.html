@@ -257,7 +257,7 @@
     <div class="left-column">
         <div class="info-form">
             <h2>Leave Your Information</h2>
-            <form id="contactForm" action="#" method="post">
+            <form id="contactForm">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
 
@@ -267,11 +267,10 @@
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
                 <p id="message"></p>
-                <button type="submit" onclick="validateEmail(event)">Submit</button>
+                <button type="submit">Submit</button>
             </form>
-            <p id="successMessage"></p>
+            <p id="successMessage" style="color: green; font-weight: bold;"></p>
         </div>
-
         <div class="bio-container">
             <p><strong>Contact Me:</strong></p>
             <p>Email: <a href="mailto:lingyiwu@usc.edu">lingyiwu@usc.edu</a></p>
