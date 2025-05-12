@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lingyi's Personal Website</title>
 
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TY8F964W9T"> 
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -15,7 +14,7 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("contactForm").addEventListener("submit", function (event) {
-          // event.preventDefault(); 
+          event.preventDefault(); 
           document.getElementById("successMessage").textContent = "Success!";
         });
       });
@@ -27,16 +26,13 @@
             document.getElementById("contactForm").addEventListener("submit", function (event) {
                 event.preventDefault(); // 阻止默认的表单提交行为
 
-            // 获取表单数据
-                var formData = new FormData(this);
 
-            // 提交表单数据到 Zapier Webhook
+                var formData = new FormData(this);
                 fetch(this.action, {
                     method: 'POST',
                     body: formData
                 })
                 .then(response => {
-                // 如果请求成功，显示“Success!”消息
                     if (response.ok) {
                         document.getElementById("successMessage").textContent = "Success! Your form has been submitted.";
                         document.getElementById("contactForm").reset(); // 提交后清空表单
@@ -45,7 +41,6 @@
                     }
                 })
                 .catch(error => {
-                // 如果发生错误，显示错误消息
                     document.getElementById("successMessage").textContent = "There was an error with your submission. Please try again.";
                 });
             });
@@ -256,7 +251,7 @@
             <a href="https://github.com/MarianaWu01/lingyiwu.github.com" target="_blank">Github</a>
             <a href="https://github.com/MarianaWu01/Databricks" target="_blank">Databricks</a>
             <a href="https://www.youtube.com/watch?v=Jz9z0rK_YU4" target="_blank">YouTube</a>
-            <a href="https://lingyiwu01.github.io/Shopping" target="_blank">Shopping Cart</a>
+<!--             <a href="https://lingyiwu01.github.io/Shopping" target="_blank">Shopping Cart</a> -->
         </div>
         <h1>Welcome to Lingyi's Personal Website!</h1>
         <p>Welcome to my world!</p>
@@ -265,7 +260,7 @@
             <a href="https://github.com/MarianaWu01/lingyiwu.github.com" class="github-button" target="_blank">View my GitHub</a>
             <a href="https://github.com/MarianaWu01/Databricks" class="databricks-button" target="_blank">View Databricks</a>
             <a href="https://www.youtube.com/watch?v=Jz9z0rK_YU4" class="youtube-button" target="_blank">Watch on YouTube</a>
-            <a href="https://lingyiwu01.github.io/Shopping" class="youtube-button" target="_blank">Shopping Cart</a>
+<!--             <a href="https://lingyiwu01.github.io/Shopping" class="youtube-button" target="_blank">Shopping Cart</a> -->
         </div>
     </header>
 
